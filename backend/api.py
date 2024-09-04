@@ -31,7 +31,6 @@ def upload_dataset(files_data):
 
 
 @api_bp.get("/dataset")
-@api_bp.output(Schema, example="[string, string, ..., string]")
 def get_all_datasets():
     return service.get_all_datasets()
 
