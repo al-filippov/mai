@@ -24,12 +24,18 @@ curl -sSL https://install.python-poetry.org | python3 -
 
 **Добавление poetry в PATH**
 
-1. Открыть настройки переменных среды
-   <img src="docs/path1.png" width="300">
-   <img src="docs/path2.png" width="400">
-2. Изменить переменную Path текущего пользователя
-   <img src="docs/path3.png" width="500">
-3. Добавление пути `%APPDATA%\Python\Scripts` до исполняемого файла poetry
+1. Открыть настройки переменных среды \
+    \
+   <img src="docs/path1.png" width="300"> \
+    \
+   <img src="docs/path2.png" width="400"> \
+   
+2. Изменить переменную Path текущего пользователя \
+    \
+   <img src="docs/path3.png" width="500"> \
+   
+3. Добавление пути `%APPDATA%\Python\Scripts` до исполняемого файла poetry \
+    \
    <img src="docs/path4.png" width="400">
 
 ### Создание окружения
