@@ -47,17 +47,11 @@ def get_column_info(name: str, column: str):
     return service.get_column_info(name, column)
 
 
-@api_bp.get("/dataset/draw/hist/<string:name>")
+@api_bp.get("/dataset/draw/hist/<string:name>/<string:column>")
 @api_bp.output(
     FileSchema(type="string", format="binary"), content_type="image/png", example=""
 )
-def get_dataset_hist(name: str):
-    data = service.get_hist(name)
+def get_dataset_hist(name: str, column: str):
+    data = service.get_hist(name, column)
     data.seek(0)
-    return send_file(
-        data,
-        download_name=f"{name}.hist.png",
-        mimetype="image/png",
-        as_attachment=True,
-        conditional=True,
-    )
+    return send_file(data, download_name=f"{name}.hist.png", mimetype="image/png")

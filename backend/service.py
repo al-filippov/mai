@@ -49,12 +49,10 @@ class Service:
         items = sorted(dataset[column].astype(str).unique())
         return {"datatype": datatype, "items": items}
 
-    def get_hist(self, filename) -> BinaryIO:
+    def get_hist(self, filename, column) -> BinaryIO:
         dataset = self.__get_dataset(filename)
-        data = dataset[["Pclass", "Survived", "Age"]].copy()
-        data.dropna(subset=["Age"], inplace=True)
         bytes = io.BytesIO()
-        plot: Figure | None = data.plot.hist(column=["Age"], bins=80).get_figure()
+        plot: Figure | None = dataset.plot.hist(column=[column], bins=80).get_figure()
         if plot is None:
             raise Exception("Can't create hist plot")
         plot.savefig(bytes, dpi=300, format="png")
