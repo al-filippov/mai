@@ -468,6 +468,17 @@ files = [
 colorama = {version = "*", markers = "platform_system == \"Windows\""}
 
 [[package]]
+name = "cloudpickle"
+version = "3.0.0"
+description = "Pickler class to extend the standard pickle.Pickler functionality"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "cloudpickle-3.0.0-py3-none-any.whl", hash = "sha256:246ee7d0c295602a036e86369c77fecda4ab17b506496730f2f576d9016fd9c7"},
+    {file = "cloudpickle-3.0.0.tar.gz", hash = "sha256:996d9a482c6fb4f33c1a35335cf8afd065d2a56e973270364840712d9131a882"},
+]
+
+[[package]]
 name = "colorama"
 version = "0.4.6"
 description = "Cross-platform colored terminal text."
@@ -676,6 +687,41 @@ files = [
 devel = ["colorama", "json-spec", "jsonschema", "pylint", "pytest", "pytest-benchmark", "pytest-cache", "validictory"]
 
 [[package]]
+name = "featuretools"
+version = "1.31.0"
+description = "a framework for automated feature engineering"
+optional = false
+python-versions = "<4,>=3.9"
+files = [
+    {file = "featuretools-1.31.0-py3-none-any.whl", hash = "sha256:87c94e9ae959c89acd83da96bd2583f3ef0f6daaa9639cbb6e46dbde2c742a18"},
+    {file = "featuretools-1.31.0.tar.gz", hash = "sha256:01bfb17fcc1715b4c3623c7bc94a8982122c4a0fa03350ed478601bb81f90155"},
+]
+
+[package.dependencies]
+cloudpickle = ">=1.5.0"
+holidays = ">=0.17"
+numpy = ">=1.25.0"
+packaging = ">=20.0"
+pandas = ">=2.0.0"
+psutil = ">=5.7.0"
+scipy = ">=1.10.0"
+tqdm = ">=4.66.3"
+woodwork = ">=0.28.0"
+
+[package.extras]
+autonormalize = ["autonormalize (>=2.0.1)"]
+complete = ["featuretools[dask,nlp,premium]"]
+dask = ["dask[dataframe] (>=2023.2.0)", "distributed (>=2023.2.0)"]
+dev = ["black[jupyter] (>=23.1.0)", "featuretools[dask,docs,test]", "pre-commit (>=2.20.0)", "ruff (>=0.1.6)"]
+docs = ["Sphinx (==5.1.1)", "autonormalize (>=2.0.1)", "click (>=7.0.0)", "featuretools[dask,test]", "ipython (==8.4.0)", "jupyter (==1.0.0)", "jupyter-client (>=8.0.2)", "matplotlib (==3.7.2)", "myst-parser (==0.18.0)", "nbconvert (==6.5.0)", "nbsphinx (==0.8.9)", "pydata-sphinx-theme (==0.9.0)", "sphinx-copybutton (==0.5.0)", "sphinx-inline-tabs (==2022.1.2b11)"]
+nlp = ["nlp-primitives (>=2.12.0)"]
+premium = ["premium-primitives (>=0.0.3)"]
+sklearn = ["featuretools-sklearn-transformer (>=1.0.0)"]
+sql = ["featuretools-sql (>=0.0.1)", "psycopg2-binary (>=2.9.3)"]
+test = ["boto3 (>=1.34.32)", "composeml (>=0.8.0)", "graphviz (>=0.8.4)", "moto[all] (>=5.0.0)", "pip (>=23.3.0)", "pyarrow (>=14.0.1)", "pympler (>=0.8)", "pytest (>=7.1.2)", "pytest-cov (>=3.0.0)", "pytest-timeout (>=2.1.0)", "pytest-xdist (>=2.5.0)", "smart-open (>=5.0.0)", "urllib3 (>=1.26.18)"]
+tsfresh = ["featuretools-tsfresh-primitives (>=1.0.0)"]
+
+[[package]]
 name = "flask"
 version = "3.0.3"
 description = "A simple framework for building complex web applications."
@@ -834,6 +880,20 @@ files = [
 ]
 
 [[package]]
+name = "holidays"
+version = "0.57"
+description = "Generate and work with holidays in Python"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "holidays-0.57-py3-none-any.whl", hash = "sha256:bdfb2a6d58e4b7d819e049b469228e890a5ad42b8ea2bd2c150d8c10726ea82d"},
+    {file = "holidays-0.57.tar.gz", hash = "sha256:3f655f7ec290631a984beb0205120848b3e67c4ed0f3854321e3e437eca69d70"},
+]
+
+[package.dependencies]
+python-dateutil = "*"
+
+[[package]]
 name = "httpcore"
 version = "1.0.5"
 description = "A minimal low-level HTTP client."
@@ -913,6 +973,25 @@ docs = ["keras (>=2.4.3)", "matplotlib (>=3.1.2)", "memory-profiler (>=0.57.0)",
 examples = ["keras (>=2.4.3)", "matplotlib (>=3.1.2)", "pandas (>=1.0.5)", "seaborn (>=0.9.0)", "tensorflow (>=2.4.3)"]
 optional = ["keras (>=2.4.3)", "pandas (>=1.0.5)", "tensorflow (>=2.4.3)"]
 tests = ["black (>=23.3.0)", "flake8 (>=3.8.2)", "keras (>=2.4.3)", "mypy (>=1.3.0)", "pandas (>=1.0.5)", "pytest (>=5.0.1)", "pytest-cov (>=2.9.0)", "tensorflow (>=2.4.3)"]
+
+[[package]]
+name = "importlib-resources"
+version = "6.4.5"
+description = "Read resources from Python packages"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "importlib_resources-6.4.5-py3-none-any.whl", hash = "sha256:ac29d5f956f01d5e4bb63102a5a19957f1b9175e45649977264a1416783bb717"},
+    {file = "importlib_resources-6.4.5.tar.gz", hash = "sha256:980862a1d16c9e147a59603677fa2aa5fd82b87f223b6cb870695bcfce830065"},
+]
+
+[package.extras]
+check = ["pytest-checkdocs (>=2.4)", "pytest-ruff (>=0.2.1)"]
+cover = ["pytest-cov"]
+doc = ["furo", "jaraco.packaging (>=9.3)", "jaraco.tidelift (>=1.4)", "rst.linker (>=1.9)", "sphinx (>=3.5)", "sphinx-lint"]
+enabler = ["pytest-enabler (>=2.2)"]
+test = ["jaraco.test (>=5.4)", "pytest (>=6,!=8.1.*)", "zipp (>=3.17)"]
+type = ["pytest-mypy"]
 
 [[package]]
 name = "ipykernel"
@@ -2940,6 +3019,26 @@ files = [
 ]
 
 [[package]]
+name = "tqdm"
+version = "4.66.5"
+description = "Fast, Extensible Progress Meter"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "tqdm-4.66.5-py3-none-any.whl", hash = "sha256:90279a3770753eafc9194a0364852159802111925aa30eb3f9d85b0e805ac7cd"},
+    {file = "tqdm-4.66.5.tar.gz", hash = "sha256:e1020aef2e5096702d8a025ac7d16b1577279c9d63f8375b63083e9a5f0fcbad"},
+]
+
+[package.dependencies]
+colorama = {version = "*", markers = "platform_system == \"Windows\""}
+
+[package.extras]
+dev = ["pytest (>=6)", "pytest-cov", "pytest-timeout", "pytest-xdist"]
+notebook = ["ipywidgets (>=6)"]
+slack = ["slack-sdk"]
+telegram = ["requests"]
+
+[[package]]
 name = "traitlets"
 version = "5.14.3"
 description = "Traitlets Python configuration system"
@@ -3110,7 +3209,33 @@ files = [
     {file = "widgetsnbextension-4.0.13.tar.gz", hash = "sha256:ffcb67bc9febd10234a362795f643927f4e0c05d9342c727b65d2384f8feacb6"},
 ]
 
+[[package]]
+name = "woodwork"
+version = "0.31.0"
+description = "a data typing library for machine learning"
+optional = false
+python-versions = "<4,>=3.9"
+files = [
+    {file = "woodwork-0.31.0-py3-none-any.whl", hash = "sha256:5cb3370553b5f466f8c8599b1bf559584dc0b798cc1f2da26bbd7029d256c6f9"},
+    {file = "woodwork-0.31.0.tar.gz", hash = "sha256:6ef82af1d5b6525b02efe6417c574c810cfdcc606cb266bd0d7fb17a1d066b67"},
+]
+
+[package.dependencies]
+importlib-resources = ">=5.10.0"
+numpy = ">=1.25.0"
+pandas = ">=2.0.0"
+python-dateutil = ">=2.8.2"
+scikit-learn = ">=1.1.0"
+scipy = ">=1.10.0"
+
+[package.extras]
+complete = ["woodwork[updater]"]
+dev = ["click (>=8.1.7)", "pre-commit (>=2.20.0)", "ruff (>=0.1.6)", "woodwork[docs,test]"]
+docs = ["Sphinx (==5.1.1)", "ipython (==8.4.0)", "jupyter (==1.0.0)", "myst-parser (==0.18.0)", "nbconvert (==6.5.0)", "nbsphinx (==0.8.9)", "pyarrow (>=14.0.1)", "pydata-sphinx-theme (==0.9.0)", "sphinx-copybutton (==0.5.0)", "sphinx-inline-tabs (==2022.1.2b11)"]
+test = ["boto3 (>=1.34.32)", "moto[all] (>=5.0.0)", "pyarrow (>=14.0.1)", "pytest (>=7.0.1)", "pytest-cov (>=2.10.1)", "pytest-xdist (>=2.1.0)", "smart-open (>=5.0.0)"]
+updater = ["alteryx-open-src-update-checker (>=3.1.0)"]
+
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "a7e3d516bde2d6e4173d8a9770fb5337a0c806dadaeda355084b262c1995f7ea"
+content-hash = "51262612d869819aaf20a294578eedd495aaa0f2666c9aaa68166534dcf36169"
