@@ -18,6 +18,7 @@ flask-cors = "^5.0.0"
 scikit-learn = "^1.5.2"
 imbalanced-learn = "^0.12.3"
 featuretools = "^1.31.0"
+gymnasium = "^1.0.0"
 
 
 [build-system]
