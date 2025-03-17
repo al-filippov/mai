@@ -3263,6 +3263,26 @@ files = [
 typing-extensions = ">=4.6.0,<4.7.0 || >4.7.0"
 
 [[package]]
+name = "pygad"
+version = "3.4.0"
+description = "PyGAD: A Python Library for Building the Genetic Algorithm and Training Machine Learning Algoithms (Keras & PyTorch)."
+optional = false
+python-versions = ">=3"
+groups = ["main"]
+files = [
+    {file = "pygad-3.4.0-py3-none-any.whl", hash = "sha256:e6b5315e3bdc7fc7f2a1d18cc71ab7592f026f9c249ffe8a8c0d4bb6b0e91127"},
+    {file = "pygad-3.4.0.tar.gz", hash = "sha256:89d9f95ee2977bf25c98dec18b1f86cc7788e2edb8c263c2f0386d05a3c25aec"},
+]
+
+[package.dependencies]
+cloudpickle = "*"
+matplotlib = "*"
+numpy = "*"
+
+[package.extras]
+deep-learning = ["keras", "torch"]
+
+[[package]]
 name = "pygments"
 version = "2.18.0"
 description = "Pygments is a syntax highlighting package written in Python."
@@ -4880,4 +4900,4 @@ files = [
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.12"
-content-hash = "56732fdc337e583703ba7cbe033b3cd1ad5477c7a350065d9650681dc6c5cee6"
+content-hash = "ff4d56cc0a98e1571381e3118063fc31f0997f784f72a3a2c0885936892b0c9d"
