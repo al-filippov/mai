@@ -45,6 +45,8 @@ torchvision = "^0.22.0"
 #torch = { version = "^2.7.0+cu128", source = "pytorch-cuda128" }
 #torchaudio = { version = "^2.7.0+cu128", source = "pytorch-cuda128" }
 #torchvision = { version = "^0.22.0+cu128", source = "pytorch-cuda128" }
+gensim = "^4.3.3"
+bokeh = "^3.7.2"
 
 [build-system]
 requires = ["poetry-core"]
