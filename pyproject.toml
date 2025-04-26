@@ -11,28 +11,10 @@ requires-python = ">=3.12,<3.13"
 [tool.poetry]
 package-mode = false
 
-[[tool.poetry.source]]
-name = "pytorch-cuda128"
-url = "https://download.pytorch.org/whl/cu128"
-priority = "explicit"
-
-# For NVidia Common
-[tool.poetry.group.pytorch-cuda]
-optional = true
-
-[tool.poetry.group.pytorch-cuda.dependencies]
-torch = { version = "^2.7.0+cu128", source = "pytorch-cuda128" }
-torchaudio = { version = "^2.7.0+cu128", source = "pytorch-cuda128" }
-torchvision = { version = "^0.22.0+cu128", source = "pytorch-cuda128" }
-
-# Common
-[tool.poetry.group.pytorch-cpu]
-optional = true
-
-[tool.poetry.group.pytorch-cpu.dependencies]
-torch = "^2.7.0"
-torchaudio = "^2.7.0"
-torchvision = "^0.22.0"
+#[[tool.poetry.source]]
+#name = "pytorch-cuda128"
+#url = "https://download.pytorch.org/whl/cu128"
+#priority = "explicit"
 
 [tool.poetry.dependencies]
 jupyter = "^1.1.1"
@@ -57,6 +39,12 @@ mahotas = "^1.4.18"
 pygad = "^3.4.0"
 keras = "^3.9.2"
 kagglehub = "^0.3.12"
+torch = "^2.7.0"
+torchaudio = "^2.7.0"
+torchvision = "^0.22.0"
+#torch = { version = "^2.7.0+cu128", source = "pytorch-cuda128" }
+#torchaudio = { version = "^2.7.0+cu128", source = "pytorch-cuda128" }
+#torchvision = { version = "^0.22.0+cu128", source = "pytorch-cuda128" }
 
 [build-system]
 requires = ["poetry-core"]
