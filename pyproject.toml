@@ -16,6 +16,24 @@ name = "pytorch-cuda128"
 url = "https://download.pytorch.org/whl/cu128"
 priority = "explicit"
 
+# For NVidia Common
+[tool.poetry.group.pytorch-cuda]
+optional = true
+
+[tool.poetry.group.pytorch-cuda.dependencies]
+torch = { version = "^2.7.0+cu128", source = "pytorch-cuda128" }
+torchaudio = { version = "^2.7.0+cu128", source = "pytorch-cuda128" }
+torchvision = { version = "^0.22.0+cu128", source = "pytorch-cuda128" }
+
+# Common
+[tool.poetry.group.pytorch-cpu]
+optional = true
+
+[tool.poetry.group.pytorch-cpu.dependencies]
+torch = "^2.7.0"
+torchaudio = "^2.7.0"
+torchvision = "^0.22.0"
+
 [tool.poetry.dependencies]
 jupyter = "^1.1.1"
 numpy = "^1.26.4"
@@ -32,16 +50,12 @@ scikit-fuzzy = "^0.5.0"
 networkx = "^3.4.2"
 python-docx = "^1.1.2"
 spacy = "^3.7.5"
-ru_core_news_lg = {url = "https://github.com/explosion/spacy-models/releases/download/ru_core_news_lg-3.7.0/ru_core_news_lg-3.7.0-py3-none-any.whl"}
+# ru_core_news_lg = {url = "https://github.com/explosion/spacy-models/releases/download/ru_core_news_lg-3.7.0/ru_core_news_lg-3.7.0-py3-none-any.whl"}
 nltk = "^3.9.1"
 emoji = "^2.14.1"
 mahotas = "^1.4.18"
 pygad = "^3.4.0"
 keras = "^3.9.2"
-# For Windows + NVidia
-torch = { version = "^2.7.0+cu128", source = "pytorch-cuda128" }
-torchaudio = { version = "^2.7.0+cu128", source = "pytorch-cuda128" }
-torchvision = { version = "^0.22.0+cu128", source = "pytorch-cuda128" }
 kagglehub = "^0.3.12"
 
 [build-system]
